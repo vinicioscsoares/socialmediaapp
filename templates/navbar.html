@@ -4,4 +4,13 @@
 <form method='GET' action={% url 'home' %}>
     <input type="text" name="q" placeholder="Pesquisa Salas.." />
 </form>
+
+{% if request.user.is_authenticated %}
+
+<a href="">Sair</a>
+
+{% else %}
+
+<a href="{% url 'login' %}">Entrar</a>
+{% endif %}
 <hr>
