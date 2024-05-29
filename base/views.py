@@ -32,11 +32,13 @@ def loginPage(request):
         else:
             messages.error(request, 'Usuário ou Senha não existem')
 
-    context = {
-
-    }
+    context = {}
 
     return render(request,'base/login_register.html',context)
+
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
 
 
 def home(request):
